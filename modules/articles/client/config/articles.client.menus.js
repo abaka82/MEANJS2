@@ -25,7 +25,7 @@
     menuService.addSubMenuItem('topbar', 'articles', {
       title: 'Create Article',
       state: 'articles.create',
-      roles: ['user']
+      roles: ['user', 'admin']
     });
   }
 }());

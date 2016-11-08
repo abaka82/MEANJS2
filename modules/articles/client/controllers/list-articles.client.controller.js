@@ -11,5 +11,10 @@
     var vm = this;
 
     vm.articles = ArticlesService.query();
+
+     vm.getActualTime = function (time, offset) {
+        return new Date(Date.parse(time) - ( offset * 60000 ) );
+    }
+
   }
 }());

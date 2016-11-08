@@ -19,6 +19,10 @@
 
     vm.actualTime = new Date(Date.parse(vm.article.selectDate) - ( vm.article.timezoneOffset * 60000 ) );
 
+     vm.getActualTime = function (time, offset) {
+        return new Date(Date.parse(time) - ( offset * 60000 ) );
+    }
+
     // Remove existing Article
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {

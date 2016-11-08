@@ -13,6 +13,25 @@
       </small>
       <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
       <p class="list-group-item-text" ng-bind="article.content"></p>
+      <h5 class="list-group-item-text">
+        <div class="row well">
+          <div class="col-sm-2"> time in mongo (raw) : </div>
+          <div class="col-sm-4">{{article.selectDate }}</div></br>
+
+          <div class="col-sm-2">time in mongo (format) : </div>
+          <div class="col-sm-4">{{article.selectDate | date:'medium' }}</div></br>
+
+          <div class="col-sm-2">timezoneOffset : </div>
+          <div class="col-sm-4">{{article.timezoneOffset}} </div></br>
+
+          <div class="col-sm-2">actual time (raw) : </div>
+          <div class="col-sm-4">{{vm.getActualTime(article.selectDate, article.timezoneOffset)}}</div></br>
+
+          <div class="col-sm-2">actual time (format) : </div>
+          <div class="col-sm-4">{{vm.getActualTime(article.selectDate, article.timezoneOffset).toUTCString()}}</div></br>
+          </br>
+        </div>
+      </h5>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.articles.$resolved && !vm.articles.length">
