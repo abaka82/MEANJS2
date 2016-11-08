@@ -15,6 +15,9 @@ exports.create = function (req, res) {
   var article = new Article(req.body);
   article.user = req.user;
 
+  var myDate = new Date();
+  article.timezoneOffset = myDate.getTimezoneOffset();
+
   article.save(function (err) {
     if (err) {
       return res.status(400).send({
@@ -48,6 +51,9 @@ exports.update = function (req, res) {
 
   article.title = req.body.title;
   article.content = req.body.content;
+  article.selectDate = req.body.selectDate;
+  var myDate = new Date();
+  article.timezoneOffset = myDate.getTimezoneOffset();
 
   article.save(function (err) {
     if (err) {

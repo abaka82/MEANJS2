@@ -14,7 +14,13 @@
         </div>
         <div class="form-group">
           <label class="control-label" for="content">Content</label>
-          <textarea name="content" data-ng-model="vm.article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+          <textarea name="content" data-ng-model="vm.article.content" id="content" class="form-control" cols="30" rows="3" placeholder="Content"></textarea>
+        </div>
+        vm.actualTime: {{vm.actualTime}}
+        </p>
+        <div class="form-group">
+          <label class="control-label" for="date">Reservation time</label>
+          <input  name="date" datetime-picker ng-model="vm.article.selectDate" />
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.article._id ? 'Update' : 'Create'}}</button>

@@ -28,6 +28,14 @@ var ArticleSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  selectDate: {
+    type: Date,
+    default: Date.now
+  },
+  timezoneOffset: {
+    type: Number,
+    default: 0
   }
 });
 

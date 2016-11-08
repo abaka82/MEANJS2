@@ -17,6 +17,8 @@
     vm.remove = remove;
     vm.save = save;
 
+    vm.actualTime = new Date(Date.parse(vm.article.selectDate) - ( vm.article.timezoneOffset * 60000 ) );
+
     // Remove existing Article
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
